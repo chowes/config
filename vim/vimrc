@@ -1,0 +1,51 @@
+"GENERAL
+
+"disable compatibility with vi set nocompatible
+ 
+"turn on syntax highlighting
+syntax on
+
+"TABS
+set expandtab
+set tabstop=4
+set softtabstop=4
+set shiftwidth=4
+set autoindent
+
+"COLOURS
+colorscheme badwolf
+set hlsearch
+set ignorecase
+set smartcase
+set incsearch
+
+"LAYOUT
+set list " display tabs and line endings
+set listchars=trail:-,tab:-- " change the way tabs and line ends are displayed
+set number
+set backspace=2 "allow backspace to delete characters
+set hidden "allow multiple files to opened in different buffers, 'hidden' in the background
+set wildmenu "Enable enhanced command-line completion
+set autochdir "change the working directory to the directory in which the file being opened lives
+set history=1000 "remember 1000 commands/search strings
+set sessionoptions-=options "when a session is saved, do not store vimrc options
+set autoread "reread file if an external program has changed a file
+autocmd Filetype c setlocal textwidth=132  "max 132 characters in a line for c files
+
+"SHELL
+if !empty(glob('/usr/bin/zsh'))
+    set shell=/usr/bin/zsh
+endif
+
+filetype on
+filetype plugin on
+
+"LEADER KEY SHORTCUTS
+
+let mapleader = "\<Space>"
+
+nnoremap <Leader>w :w<CR>
+
+" Allow saving of files as sudo when forgetting to start vim using sudo
+cmap w!! w !sudo tee > /dev/null %
+

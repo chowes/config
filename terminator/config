@@ -1,0 +1,21 @@
+[global_config]
+  borderless = True
+  title_font = DejaVu Sans Mono 9
+  title_use_system_font = False
+[keybindings]
+[layouts]
+  [[default]]
+    [[[child1]]]
+      parent = window0
+      type = Terminal
+    [[[window0]]]
+      parent = ""
+      type = Window
+[plugins]
+[profiles]
+  [[default]]
+    cursor_color = "#aaaaaa"
+    palette = "#181915:#b50050:#98fe24:#c5bb63:#3465a4:#75507b:#4194b0:#d3d7cf:#45473c:#e00265:#6dca04:#e6db74:#ff2500:#af5fff:#5cd1f8:#ffffff"
+    scrollback_infinite = True
+    scrollbar_position = hidden
+    show_titlebar = False
