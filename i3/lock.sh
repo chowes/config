@@ -1,17 +1,16 @@
 #!/bin/sh
 
 B='#00000000'  # blank
-C='#ffff2222'  # clear ish
 D='#ff00ffcc'  # default
 T='#ee00ee00'  # text
-W='#df006eee'  # wrong
-V='#bb00bbbb'  # verifying
+W='#dd0048ff'  # wrong
+V='#06eefaff'  # verifying
 
 i3lock                  \
---insidevercolor=$C     \
+--insidevercolor=$B     \
 --ringvercolor=$V       \
 \
---insidewrongcolor=$C   \
+--insidewrongcolor=$B   \
 --ringwrongcolor=$W     \
 \
 --insidecolor=$B        \
