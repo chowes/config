@@ -114,7 +114,7 @@ bindsym $mod+Shift+9 move container to workspace 9
 bindsym $mod+Shift+0 move container to workspace 10
 
 # lock the screen
-bindsym $mod+z exec --no-startup-id ${HOME}/.config/i3/lock.sh
+bindsym $mod+z exec i3lock 
 # reload the configuration file
 bindsym $mod+Shift+c reload
 # restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
@@ -130,10 +130,10 @@ mode "resize" {
         # Pressing right will grow the window’s width.
         # Pressing up will shrink the window’s height.
         # Pressing down will grow the window’s height.
-        bindsym j resize shrink width 10 px or 10 ppt
-        bindsym k resize grow height 10 px or 10 ppt
-        bindsym l resize shrink height 10 px or 10 ppt
-        bindsym semicolon resize grow width 10 px or 10 ppt
+        bindsym h resize shrink width 10 px or 10 ppt
+        bindsym j resize grow height 10 px or 10 ppt
+        bindsym k resize shrink height 10 px or 10 ppt
+        bindsym l resize grow width 10 px or 10 ppt
 
         # same bindings, but for the arrow keys
         bindsym Left resize shrink width 10 px or 10 ppt
@@ -149,23 +149,9 @@ mode "resize" {
 bindsym $mod+r mode "resize"
 
 # Pulse Audio controls
-bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume 0 +5% #increase sound volume
-bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume 0 -5% #decrease sound volume
-bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute 0 toggle # mute sound
-bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute 1 toggle # mute microphone
-
-# Sreen brightness controls
-bindsym XF86MonBrightnessUp exec xbacklight -inc 10 # increase screen brightness
-bindsym XF86MonBrightnessDown exec xbacklight -dec 10 # decrease screen brightness
-
-# Touchpad controls
-bindsym XF86TouchpadToggle exec /some/path/toggletouchpad.sh # toggle touchpad
-
-# Media player controls
-bindsym XF86AudioPlay exec playerctl play
-bindsym XF86AudioPause exec playerctl pause
-bindsym XF86AudioNext exec playerctl next
-bindsym XF86AudioPrev exec playerctl previous
+bindsym $mod+KP_Add exec --no-startup-id pactl set-sink-volume 0 +5% #increase sound volume
+bindsym $mod+KP_Subtract exec --no-startup-id pactl set-sink-volume 0 -5% #decrease sound volume
+bindsym $mod+KP_Multiply exec --no-startup-id pactl set-sink-mute 0 toggle # mute sound
 
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)
@@ -182,7 +168,7 @@ bar {
         binding_mode       #2f343a #900000 #ffffff
     }
 
-    font pango:DejaVu Sans Mono 12
+    font pango:Source Code Pro 12
     status_command i3status
 }
 
@@ -206,5 +192,7 @@ workspace_layout tabbed
 # Startup Programs
 
 exec --no-startup-id compton --config ${HOME}/.config/compton/compton.conf
-exec --no-startup-id feh --bg-scale ${HOME}/Images/wallpaper
+exec --no-startup-id ${HOME}/.local/scripts/layout_multi.sh
+exec --no-startup-id ${HOME}/.local/scripts/set_wallpaper.sh
+
 
