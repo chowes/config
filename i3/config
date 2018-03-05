@@ -189,6 +189,9 @@ client.background       #ffffff
 # Layout Stacking
 workspace_layout tabbed
 
+# Startup Workspaces
+workspace 10 output HDMI3
+
 # Startup Programs
 
 exec --no-startup-id compton --config ${HOME}/.config/compton/compton.conf
