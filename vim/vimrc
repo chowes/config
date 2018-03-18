@@ -1,7 +1,8 @@
 "GENERAL
 
-"disable compatibility with vi set nocompatible
- 
+"disable compatibility with vi
+set nocompatible
+
 "turn on syntax highlighting
 syntax on
 
