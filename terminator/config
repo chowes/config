@@ -27,9 +27,9 @@
     scrollback_infinite = True
     scrollbar_position = hidden
     show_titlebar = False
+    urgent_bell = True
     use_custom_command = True
     use_system_font = False
-    urgent_bell = True
   [[terminator_default]]
     background_darkness = 0.75
     background_image = None
@@ -38,6 +38,6 @@
     foreground_color = "#00ff00"
     scrollback_infinite = True
     show_titlebar = False
+    urgent_bell = True
     use_custom_command = True
     use_system_font = False
-    urgent_bell = True
