@@ -1,7 +1,13 @@
 "GENERAL
 
-"disable compatibility with vi set nocompatible
- 
+"disable compatibility with vi
+set nocompatible
+
+"backup is really just an annoyance since we're using git anyway
+set nobackup
+set nowb
+set noswapfile
+
 "turn on syntax highlighting
 syntax on
 
