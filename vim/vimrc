@@ -73,6 +73,8 @@ noremap <Leader>m :!make <enter>
 noremap <Leader>c :!make clean <enter>
 "leader + v to open vimrc file in a vsplit
 nnoremap <leader>v :vsplit $MYVIMRC<cr>
+"leader + l to clear highlighting
+nnoremap <leader>l :noh <enter>
 
 "--------------------- Vim-Plug managed plugins ------------------------------
 "If vim-plug isn't installed, install it
