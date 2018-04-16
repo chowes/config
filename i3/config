@@ -190,7 +190,7 @@ client.background       #ffffff
 workspace_layout tabbed
 
 # Startup Workspaces
-# workspace 10 output HDMI3
+workspace 10 output HDMI3
 
 # Startup Programs
 
