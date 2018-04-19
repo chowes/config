@@ -164,8 +164,8 @@ bar {
         focused_workspace  #92f8fc #92f8fc #2e0054
         active_workspace   #2e0054 #2e0054 #92f8fc
         inactive_workspace #2e0054 #2e0054 #92f8fc
-        urgent_workspace   #FF0080 #900000 #ffffff
-        binding_mode       #2f343a #900000 #ffffff
+        urgent_workspace   #ff017e #ff017e #92f8fc
+        binding_mode       #ff017e #ff017e #92f8fc
     }
 
     font pango:Source Code Pro 12
