@@ -15,7 +15,7 @@ bindsym $mod+Return exec i3-sensible-terminal
 bindsym $mod+q kill
 
 # Open the program menu
-bindsym $mod+d exec --no-startup-id i3-dmenu-desktop
+bindsym $mod+d exec --no-startup-id i3-dmenu-desktop --dmenu="dmenu -i -nb '#2e0054' -nf '#92f8fc' -sf '#2e0054' -sb '#92f8fc'"
 
 # change focus - vim style bindings
 bindsym $mod+h focus left
@@ -172,7 +172,6 @@ client.background       #ffffff
 workspace_layout tabbed
 
 # Startup Programs
-
 exec --no-startup-id compton --config ${HOME}/.config/compton/compton.conf
 exec --no-startup-id feh --bg-scale ${HOME}/Images/wallpaper
 exec --no-startup-id xset s off -dpms
