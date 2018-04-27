@@ -32,7 +32,7 @@ bindsym $mod+Return exec i3-sensible-terminal
 bindsym $mod+q kill
 
 # start dmenu (a program launcher)
-bindsym $mod+d exec --no-startup-id i3-dmenu-desktop --dmenu="dmenu -fn 'Source Code Pro' -i -nb '#2e0054' -nf '#92f8fc' -sf '#2e0054' -sb '#92f8fc'"
+bindsym $mod+d exec --no-startup-id i3-dmenu-desktop --dmenu="dmenu -fn 'Source Code Pro:pixelsize=20' -i -nb '#2e0054' -nf '#92f8fc' -sf '#2e0054' -sb '#92f8fc'"
 
 # change focus
 bindsym $mod+h focus left
@@ -144,9 +144,9 @@ mode "resize" {
 bindsym $mod+r mode "resize"
 
 # Pulse Audio controls
-bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume 0 +5% #increase sound volume
-bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume 0 -5% #decrease sound volume
-bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute 0 toggle # mute sound
+bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume 1 +5% #increase sound volume
+bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume 1 -5% #decrease sound volume
+bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute 1 toggle # mute sound
 
 
 # Start i3bar to display a workspace bar (plus the system information i3status
