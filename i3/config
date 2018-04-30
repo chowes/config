@@ -139,7 +139,7 @@ bindsym XF86AudioPrev exec playerctl previous
 # finds out, if available)
 bar {
     colors {
-        background #2e0054
+        background #140025
         statusline #92f8fc
         separator #666666
 

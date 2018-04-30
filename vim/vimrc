@@ -19,7 +19,7 @@ set shiftwidth=4
 set autoindent
 
 "COLOURS
-colorscheme badwolf
+colorscheme dracula
 set hlsearch
 set ignorecase
 set smartcase
@@ -74,6 +74,9 @@ if empty(glob('~/.vim/autoload/plug.vim'))
 else
 	"plugin installed, load plugins
 	call plug#begin('~/.vim/plugged')
+        " colours
+        Plug 'dracula/vim', { 'as': 'dracula' }
+
 		" airline plugin
 		Plug 'vim-airline/vim-airline'
 		Plug 'vim-airline/vim-airline-themes'
