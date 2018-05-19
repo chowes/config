@@ -1,6 +1,6 @@
 [global_config]
   borderless = True
-  title_font = Source Code Pro 12
+  title_font = Source Code Pro 11
   title_use_system_font = False
 [keybindings]
 [layouts]
@@ -14,10 +14,12 @@
 [plugins]
 [profiles]
   [[default]]
-    cursor_color = "#aaaaaa"
-    palette = "#181915:#b50050:#98fe24:#c5bb63:#3465a4:#75507b:#4194b0:#d3d7cf:#45473c:#e00265:#6dca04:#e6db74:#ff2500:#af5fff:#5cd1f8:#ffffff"
+    background_color = "#120021"
+    cursor_color = "#92f8fc"
+    cursor_color_fg = False
+    font = Source Code Pro 11
+    palette = "#2e9ef4:#2e0054:#5f819d:#fdff00:#ff017e:#85678f:#5e8d87:#707880:#2e0054:#fdff00:#b5bd68:#f0c674:#81a2be:#b294bb:#8abeb7:#c5c8c6"
     scrollback_infinite = True
     scrollbar_position = hidden
     show_titlebar = False
     use_system_font = False
-    font = Source Code Pro 12
