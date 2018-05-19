@@ -187,11 +187,11 @@ workspace_layout tabbed
 
 
 # Startup Workspaces
-workspace 10 output VGA1
+workspace 10 output HDMI-0
 
 # Startup Programs
-exec --no-startup-id compton --config ${HOME}/.config/compton/compton.conf
+exec --no-startup-id compton --config ${HOME}/.config/compton.conf
 exec --no-startup-id ${HOME}/.local/scripts/layout_multi.sh
-exec --no-startup-id feh --bg-fill ${HOME}/Pictures/wall.jpg
+exec --no-startup-id feh --bg-fill ${HOME}/Pictures/wall_right --bg-fill ${HOME}/Pictures/wall_left
 
 

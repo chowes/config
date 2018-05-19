@@ -7,6 +7,7 @@
   [[default]]
     [[[child1]]]
       parent = window0
+      profile = Solarized Dark Higher Contrast
       type = Terminal
     [[[window0]]]
       parent = ""
@@ -23,3 +24,46 @@
     scrollbar_position = hidden
     show_titlebar = False
     use_system_font = False
+  [[Dracula]]
+    background_color = "#1e1f29"
+    cursor_color = "#aaaaaa"
+    foreground_color = "#f8f8f2"
+    palette = "#44475a:#ff5555:#50fa7b:#f1fa8c:#8be9fd:#bd93f9:#ff79c6:#94a3a5:#000000:#ff5555:#50fa7b:#f1fa8c:#8be9fd:#bd93f9:#ff79c6:#ffffff"
+  [[Solarized Darcula]]
+    background_color = "#3d3f41"
+    cursor_color = "#708284"
+    foreground_color = "#d2d8d9"
+    palette = "#25292a:#f24840:#629655:#b68800:#2075c7:#797fd4:#15968d:#d2d8d9:#25292a:#f24840:#629655:#b68800:#2075c7:#797fd4:#15968d:#d2d8d9"
+  [[Solarized Dark - Patched]]
+    background_color = "#001e27"
+    cursor_color = "#708284"
+    foreground_color = "#708284"
+    palette = "#002831:#d11c24:#738a05:#a57706:#2176c7:#c61c6f:#259286:#eae3cb:#475b62:#bd3613:#475b62:#536870:#708284:#5956ba:#819090:#fcf4dc"
+    scrollback_lines = 1000
+    scrollbar_position = hidden
+    show_titlebar = False
+  [[Solarized Dark Higher Contrast]]
+    background_color = "#001e27"
+    cursor_color = "#f34b00"
+    foreground_color = "#9cc2c3"
+    palette = "#002831:#d11c24:#6cbe6c:#a57706:#2176c7:#c61c6f:#259286:#eae3cb:#006488:#f5163b:#51ef84:#b27e28:#178ec8:#e24d8e:#00b39e:#fcf4dc"
+    scrollbar_position = hidden
+    show_titlebar = False
+  [[Solarized Light]]
+    background_color = "#fcf4dc"
+    cursor_color = "#536870"
+    foreground_color = "#536870"
+    palette = "#002831:#d11c24:#738a05:#a57706:#2176c7:#c61c6f:#259286:#eae3cb:#001e27:#bd3613:#475b62:#536870:#708284:#5956ba:#819090:#fcf4dc"
+  [[SpaceGray Eighties]]
+    background_color = "#222222"
+    cursor_color = "#bbbbbb"
+    foreground_color = "#bdbaae"
+    palette = "#15171c:#ec5f67:#81a764:#fec254:#5486c0:#bf83c1:#57c2c1:#efece7:#555555:#ff6973:#93d493:#ffd256:#4d84d1:#ff55ff:#83e9e4:#ffffff"
+    scrollback_lines = 1000
+    scrollbar_position = hidden
+    show_titlebar = False
+  [[WarmNeon]]
+    background_color = "#404040"
+    cursor_color = "#30ff24"
+    foreground_color = "#afdab6"
+    palette = "#000000:#e24346:#39b13a:#dae145:#4261c5:#f920fb:#2abbd4:#d0b8a3:#fefcfc:#e97071:#9cc090:#ddda7a:#7b91d6:#f674ba:#5ed1e5:#d8c8bb"
