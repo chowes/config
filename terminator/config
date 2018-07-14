@@ -1,5 +1,6 @@
 [global_config]
   borderless = True
+  enabled_plugins = TerminatorThemes, LaunchpadCodeURLHandler, APTURLHandler, LaunchpadBugURLHandler
   title_font = Source Code Pro 11
   title_use_system_font = False
 [keybindings]
@@ -7,6 +8,7 @@
   [[default]]
     [[[child1]]]
       parent = window0
+      profile = Solarized Dark Higher Contrast
       type = Terminal
     [[[window0]]]
       parent = ""
@@ -14,12 +16,17 @@
 [plugins]
 [profiles]
   [[default]]
-    background_color = "#120021"
-    cursor_color = "#92f8fc"
-    cursor_color_fg = False
+    cursor_color = "#aaaaaa"
     font = Source Code Pro 11
-    palette = "#2e9ef4:#2e0054:#5f819d:#fdff00:#ff017e:#85678f:#5e8d87:#707880:#2e0054:#fdff00:#b5bd68:#f0c674:#81a2be:#b294bb:#8abeb7:#c5c8c6"
     scrollback_infinite = True
     scrollbar_position = hidden
     show_titlebar = False
     use_system_font = False
+  [[Solarized Dark Higher Contrast]]
+    background_color = "#001e27"
+    cursor_color = "#f34b00"
+    foreground_color = "#9cc2c3"
+    palette = "#002831:#d11c24:#6cbe6c:#a57706:#2176c7:#c61c6f:#259286:#eae3cb:#006488:#f5163b:#51ef84:#b27e28:#178ec8:#e24d8e:#00b39e:#fcf4dc"
+    scrollback_infinite = True
+    scrollbar_position = hidden
+    show_titlebar = False
