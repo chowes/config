@@ -40,14 +40,10 @@ set history=1000 "remember 1000 commands/search strings
 set sessionoptions-=options "when a session is saved, do not store vimrc options
 set autoread "reread file if an external program has changed a file
 autocmd Filetype c setlocal textwidth=132  "max 132 characters in a line for c files
+set guicursor=
 
 filetype on
 filetype plugin indent on
-
-"SHELL
-if !empty(glob('/usr/bin/zsh'))
-    set shell=/usr/bin/zsh
-endif
 
 "TAGS
 set tags=tags;
@@ -63,79 +59,26 @@ nmap <Leader>p "+p
 nmap <Leader>P "+P
 vmap <Leader>p "+p
 vmap <Leader>P "+P
-"leader + m to run make on the terminal
-noremap <Leader>m :!make <enter>
-"leader + c to run make clean on the terminal
-noremap <Leader>c :!make clean <enter>
-"leader + v to open vimrc file in a vsplit
-nnoremap <leader>v :vsplit $MYVIMRC<cr>
 "leader + l to clear highlighting
 nnoremap <leader>l :noh <enter>
 
-"Plugins
-"If vim-plug isn't installed, install it
-if empty(glob('~/.vim/autoload/plug.vim'))
-  silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
-  autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
-else
-	"plugin installed, load plugins
-	call plug#begin('~/.vim/plugged')
-        " colours
-        Plug 'dracula/vim', { 'as': 'dracula' }
+call plug#begin('~/.local/share/nvim/plugged')
+	" colours
+	Plug 'dracula/vim', { 'as': 'dracula' }
 
-		" airline plugin
-		Plug 'vim-airline/vim-airline'
-		Plug 'vim-airline/vim-airline-themes'
+	" airline plugin
+	Plug 'vim-airline/vim-airline'
+	Plug 'vim-airline/vim-airline-themes'
 
-		"Plugins to support snips
-		Plug 'MarcWeber/vim-addon-mw-utils'
-		Plug 'tomtom/tlib_vim'
-		Plug 'garbas/vim-snipmate'
-		Plug 'honza/vim-snippets'
+	" markdown
+	Plug 'vim-pandoc/vim-pandoc'
+	Plug 'vim-pandoc/vim-pandoc-syntax'
 
-		"Git plugins
-		Plug 'airblade/vim-gitgutter'
-		Plug 'tpope/vim-fugitive'
-		Plug 'gregsexton/gitv', {'on': ['Gitv']}
-		"rhubarb is used for :Gbrowse command
-		Plug 'tpope/vim-rhubarb'
-
-		"Marks :help signature
-		Plug 'kshenoy/vim-signature'
-	call plug#end()
-endif
-
-" Open quickfix window list after search completes
-function! MySearch()
-  let grep_term = input("Enter search term: ")
-  if !empty(grep_term)
-    execute 'silent grep' grep_term | copen
-  else
-    echo "Empty search term"
-  endif
-  redraw!
-endfunction
-
-" :Grep in vim calls ag and automatically opens the quickfix window list
-command! Grep call MySearch()
-
-"---------------------------------------- CUSTOM ----------------------------------------
-
-" Load matchit.vim, but only if the user hasn't installed a newer version.
-" Use % key to jump between if,else if and else statements
-if !exists('g:loaded_matchit') && findfile('plugin/matchit.vim', &rtp) ==# ''
-  runtime! macros/matchit.vim
-endif
-
-if executable('ag')
-  " Use Ag over Grep
-    set grepprg=ag\ --nogroup\ --nocolor
-
-  " Use ag in CtrlP for listing files. Lightning fast and respects .gitignore
-    let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
-endif
-
-let c_space_errors = 1 "highlight trailing white space for c files
+	"Git plugins
+	Plug 'airblade/vim-gitgutter'
+	Plug 'tpope/vim-fugitive'
+	Plug 'gregsexton/gitv', {'on': ['Gitv']}
+call plug#end()
 
 " Airline settings
 "let g:airline_section_b="" "dont show git hunks
@@ -160,4 +103,3 @@ set noshowmode
 
 " GitGutter settings
 let g:gitgutter_max_signs = 5000 "max diff of 5000 lines
-
