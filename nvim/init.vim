@@ -1,34 +1,38 @@
-"GENERAL
+" GENERAL
 
-"disable compatibility with vi
+" disable compatibility with vi
 set nocompatible
 
-"backup is really just an annoyance since we're using git anyway
+" backup is really just an annoyance since we're using git anyway
 set nobackup
 set nowb
 set noswapfile
 
-"turn on syntax highlighting
+" turn on syntax highlighting
 syntax on
 
-"show title
+" filetype
+filetype on
+filetype plugin indent on
+
+" show title
 set title
 
-"TABS
+" tabs
 set noexpandtab
 set tabstop=4
 set softtabstop=4
 set shiftwidth=4
 set autoindent
 
-"COLOURS
+" color
 colorscheme dracula
 set hlsearch
 set ignorecase
 set smartcase
 set incsearch
 
-"LAYOUT
+" layout
 set list " display tabs and line endings
 set listchars=trail:-,tab:\ \  " change the way tabs and line ends are displayed
 set number
@@ -42,25 +46,29 @@ set autoread "reread file if an external program has changed a file
 autocmd Filetype c setlocal textwidth=132  "max 132 characters in a line for c files
 set guicursor=
 
-filetype on
-filetype plugin indent on
-
-"TAGS
+" tags
 set tags=tags;
 
-"LEADER KEY SHORTCUTS
+
+" SHORTCUTS
+"
 let mapleader = "\<Space>"
-"leader + w to save a file
-nnoremap <Leader>w :w<CR>
-"various shortcuts to copy/paste from system clipboard
-vmap <Leader>y "+y
-vmap <Leader>d "+d
-nmap <Leader>p "+p
-nmap <Leader>P "+P
-vmap <Leader>p "+p
-vmap <Leader>P "+P
-"leader + l to clear highlighting
+" leader + l to clear highlighting
 nnoremap <leader>l :noh <enter>
+" leader + w to save a file
+nnoremap <Leader>w :w<enter>
+" close a buffer without closing the window
+nnoremap <leader>q :bp<cr>:bd #<cr>
+" close all buffers
+nnoremap <leader>Q :qa<cr>
+" navigation
+nnoremap <C-J> <C-W><C-J>
+nnoremap <C-K> <C-W><C-K>
+nnoremap <C-L> <C-W><C-L>
+nnoremap <C-H> <C-W><C-H>
+
+
+" PLUGINS
 
 call plug#begin('~/.local/share/nvim/plugged')
 	" colours
@@ -70,21 +78,45 @@ call plug#begin('~/.local/share/nvim/plugged')
 	Plug 'vim-airline/vim-airline'
 	Plug 'vim-airline/vim-airline-themes'
 
+	" file explorer
+	Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
+
 	" markdown
 	Plug 'vim-pandoc/vim-pandoc'
 	Plug 'vim-pandoc/vim-pandoc-syntax'
 
-	"Git plugins
+	" git plugins
 	Plug 'airblade/vim-gitgutter'
 	Plug 'tpope/vim-fugitive'
 	Plug 'gregsexton/gitv', {'on': ['Gitv']}
+
+	" easy motion
+	Plug 'easymotion/vim-easymotion'
+
+	" deoplete
+	Plug 'roxma/nvim-yarp'
+	Plug 'roxma/vim-hug-neovim-rpc'
+	if has('nvim')
+		Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+	else
+		Plug 'Shougo/deoplete.nvim'
+	endif
+	Plug 'zchee/deoplete-jedi'
 call plug#end()
 
+" NerdTree settings
+nnoremap <Leader>F :NERDTreeToggle <enter>
+let NERDTreeWinSize = 25
+
+" deoplete settings
+let g:deoplete#enable_at_startup = 1
+let g:deoplete#enable_smart_case = 1
+let g:deoplete#disable_auto_complete = 1
+inoremap <expr> <leader><Tab> deoplete#mappings#manual_complete()
+inoremap <expr> <Tab>  pumvisible() ? "\<C-n>" : "\<Tab>"
+inoremap <expr> <S-Tab>  pumvisible() ? "\<C-p>" : "\<S-Tab>"
+
 " Airline settings
-"let g:airline_section_b="" "dont show git hunks
-"let g:airline_section_x="" "dont show filetype
-"let g:airline_section_y="" "dont show file encoding
-"let g:airline_section_z="" "dont show cursor pos info
 let g:airline#extensions#tabline#enabled = 1 "enable buffer line at the top
 let g:airline#extensions#tabline#buffer_min_count = 2 "show buffer line only when at least 2 buffers are open
 let g:airline#extensions#tabline#buffer_idx_mode = 1 "show numbers in buffer line
@@ -103,3 +135,4 @@ set noshowmode
 
 " GitGutter settings
 let g:gitgutter_max_signs = 5000 "max diff of 5000 lines
+
