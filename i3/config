@@ -109,7 +109,7 @@ bindsym $mod+Shift+9 move container to workspace 9
 bindsym $mod+Shift+0 move container to workspace 10
 
 # lock the screen
-bindsym $mod+z exec i3lock -u -c 29355B
+bindsym $mod+z exec i3lock -u -i ${HOME}/Pictures/lock_screen_scaled
 
 # reload the configuration file
 bindsym $mod+Shift+c reload
@@ -190,7 +190,7 @@ workspace 10 output VGA1
 
 # Startup Programs
 exec --no-startup-id compton --config ${HOME}/.config/compton/compton.conf
-exec --no-startup-id ${HOME}/.local/scripts/layout_portrait.sh
+exec --no-startup-id ${HOME}/.local/scripts/layout_multi.sh
 exec --no-startup-id feh --bg-fill ${HOME}/Pictures/wall_right --bg-fill ${HOME}/Pictures/wall_left
 
 

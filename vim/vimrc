@@ -27,6 +27,7 @@ set smartcase
 set incsearch
 
 "LAYOUT
+set linebreak " wrap lines on word endings
 set list " display tabs and line endings
 set listchars=trail:-,tab:-- " change the way tabs and line ends are displayed
 set number
