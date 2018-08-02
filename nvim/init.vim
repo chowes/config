@@ -46,17 +46,28 @@ set autoread "reread file if an external program has changed a file
 autocmd Filetype c setlocal textwidth=132  "max 132 characters in a line for c files
 set guicursor=
 
-" tags
+" tags + cscope
 set tags=tags;
+
+" recursively search for the cscope database
+function! LoadCscope()
+  set nocscopeverbose
+  let db_dir = finddir(".cscope", ".;")
+  if (!empty(db_dir))
+    exe "cs add " . db_dir
+  " else add the database pointed to by environment variable 
+  elseif $CSCOPE_DB != ""
+    cs add $CSCOPE_DB
+  endif
+endfunction
+au BufEnter /* call LoadCscope()
 
 
 " SHORTCUTS
-"
+
 let mapleader = "\<Space>"
 " leader + l to clear highlighting
 nnoremap <leader>l :noh <enter>
-" leader + w to save a file
-nnoremap <Leader>w :w<enter>
 " close a buffer without closing the window
 nnoremap <leader>q :bp<cr>:bd #<cr>
 " close all buffers
@@ -66,6 +77,8 @@ nnoremap <C-J> <C-W><C-J>
 nnoremap <C-K> <C-W><C-K>
 nnoremap <C-L> <C-W><C-L>
 nnoremap <C-H> <C-W><C-H>
+" folds
+nnoremap <leader>f za
 
 
 " PLUGINS
@@ -109,7 +122,7 @@ nnoremap <Leader>F :NERDTreeToggle <enter>
 let NERDTreeWinSize = 25
 
 " deoplete settings
-let g:deoplete#enable_at_startup = 1
+let g:deoplete#enable_at_startup = 0
 let g:deoplete#enable_smart_case = 1
 let g:deoplete#disable_auto_complete = 1
 inoremap <expr> <leader><Tab> deoplete#mappings#manual_complete()
