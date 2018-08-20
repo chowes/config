@@ -4,6 +4,8 @@
   title_font = Source Code Pro 10
   title_use_system_font = False
 [keybindings]
+  full_screen = <Shift>F11
+  help = <Shift>F1
 [layouts]
   [[default]]
     [[[child1]]]
