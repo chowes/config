@@ -80,7 +80,8 @@ bindsym $mod+Shift+9 move container to workspace 9
 bindsym $mod+Shift+0 move container to workspace 10
 
 # lock the screen
-bindsym $mod+z exec --no-startup-id ${HOME}/.config/i3/lock.sh
+bindsym $mod+z exec i3lock -u -c 29355B
+
 # reload the configuration file
 bindsym $mod+Shift+c reload
 # restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
@@ -139,15 +140,15 @@ bindsym XF86AudioPrev exec playerctl previous
 # finds out, if available)
 bar {
     colors {
-        background #140025
+        background #000036
         statusline #92f8fc
         separator #666666
 
-        focused_workspace  #92f8fc #92f8fc #2e0054
-        active_workspace   #2e0054 #2e0054 #92f8fc
-        inactive_workspace #2e0054 #2e0054 #92f8fc
-        urgent_workspace   #2f343a #900000 #ffffff
-        binding_mode       #2f343a #900000 #ffffff
+        focused_workspace  #92f8fc #92f8fc #000036
+        active_workspace   #000036 #000036 #92f8fc
+        inactive_workspace #000036 #000036 #92f8fc
+        urgent_workspace   #ff017e #ff017e #92f8fc
+        binding_mode       #ff017e #ff017e #92f8fc
     }
 
     font pango:DejaVu Sans Mono 12
@@ -160,7 +161,7 @@ new_window none
 # Colours
 
 # class                 border  backgr. text    indicator child_border
-client.focused          #2e0054 #2e0054 #92f8fc #2e9ef4   #285577
+client.focused          #000036 #000036 #92f8fc #2e9ef4   #285577
 client.unfocused        #0E001C #0E001C #008E93 #292d2e   #222222
 client.focused_inactive #0E001C #0E001C #8FFF44 #292d2e   #222222
 client.urgent           #2f343a #900000 #ffffff #900000   #900000

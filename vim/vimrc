@@ -22,6 +22,7 @@ set shiftwidth=4
 set autoindent
 
 "COLOURS
+set t_Co=256
 colorscheme dracula
 set hlsearch
 set ignorecase
@@ -49,8 +50,8 @@ if !empty(glob('/usr/bin/zsh'))
     set shell=/usr/bin/zsh
 endif
 
-"TAGS
-set tags=tags;
+"CTAGS
+set tags=./tags,tags;$HOME
 
 "LEADER KEY SHORTCUTS
 let mapleader = "\<Space>"
@@ -71,6 +72,16 @@ noremap <Leader>c :!make clean <enter>
 nnoremap <leader>v :vsplit $MYVIMRC<cr>
 "leader + l to clear highlighting
 nnoremap <leader>l :noh <enter>
+"leader + D to highlight duplicate lines
+nnoremap <leader>D :syn clear Repeat <bar> g/^\(.*\)\n\ze\%(.*\n\)*\1$/exe 'syn match Repeat "^' . escape(getline('.'), '".\^$*[]') . '$"' <bar> nohlsearch
+"leader + T to take their side of the conflict
+nnoremap <leader>T :%diffget RE <enter> :diffupdate <enter>
+"leader + O to take our side of the conflict
+nnoremap <leader>O :%diffget RO <enter> :diffupdate <enter>
+"leader + w to save
+nnoremap <leader>w :w <enter>
+"leader + Q to quit all
+nnoremap <leader>Q :qa <enter>
 
 "Plugins
 "If vim-plug isn't installed, install it
@@ -82,6 +93,7 @@ else
 	call plug#begin('~/.vim/plugged')
         " colours
         Plug 'dracula/vim', { 'as': 'dracula' }
+        Plug 'dikiaap/minimalist', { 'as': 'minimalist' }
 
 		" airline plugin
 		Plug 'vim-airline/vim-airline'
