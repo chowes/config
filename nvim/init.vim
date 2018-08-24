@@ -19,7 +19,7 @@ filetype plugin indent on
 set title
 
 " tabs
-set noexpandtab
+set expandtab
 set tabstop=4
 set softtabstop=4
 set shiftwidth=4
@@ -34,7 +34,7 @@ set incsearch
 
 " layout
 set list " display tabs and line endings
-set listchars=trail:-,tab:\ \  " change the way tabs and line ends are displayed
+set listchars=trail:-,tab:-- " change the way tabs and line ends are displayed
 set number
 set backspace=2 "allow backspace to delete characters
 set hidden "allow multiple files to opened in different buffers, 'hidden' in the background
