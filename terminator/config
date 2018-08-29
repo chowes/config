@@ -1,13 +1,17 @@
 [global_config]
   borderless = True
+  enabled_plugins = TerminatorThemes, LaunchpadCodeURLHandler, APTURLHandler, LaunchpadBugURLHandler
   title_font = Source Code Pro 11
   title_use_system_font = False
 [keybindings]
+  group_all = <Primary>g
+  ungroup_all = <Primary><Shift>g
 [layouts]
   [[default]]
     [[[child1]]]
+      command = /usr/bin/zsh
       parent = window0
-      profile = Solarized Dark Higher Contrast
+      profile = Dracula
       type = Terminal
     [[[window0]]]
       parent = ""
@@ -15,55 +19,45 @@
 [plugins]
 [profiles]
   [[default]]
-    background_color = "#120021"
-    cursor_color = "#92f8fc"
-    cursor_color_fg = False
-    font = Source Code Pro 11
-    palette = "#2e9ef4:#2e0054:#5f819d:#fdff00:#ff017e:#85678f:#5e8d87:#707880:#2e0054:#fdff00:#b5bd68:#f0c674:#81a2be:#b294bb:#8abeb7:#c5c8c6"
+    background_color = "#1e1f29"
+    background_image = None
+    cursor_color = "#8be9fd"
+    custom_command = /usr/bin/zsh
+    font = Source Code Pro for Powerline 11
+    login_shell = True
+    palette = "#44475a:#ff5555:#50fa7b:#f1fa8c:#8be9fd:#bd93f9:#ff79c6:#94a3a5:#000000:#ff5555:#50fa7b:#f1fa8c:#8be9fd:#bd93f9:#ff79c6:#ffffff"
     scrollback_infinite = True
     scrollbar_position = hidden
     show_titlebar = False
+    use_custom_command = True
     use_system_font = False
   [[Dracula]]
     background_color = "#1e1f29"
-    cursor_color = "#aaaaaa"
+    background_image = None
+    cursor_color = "#8be9fd"
+    font = Source Code Pro for Powerline Light 11
     foreground_color = "#f8f8f2"
     palette = "#44475a:#ff5555:#50fa7b:#f1fa8c:#8be9fd:#bd93f9:#ff79c6:#94a3a5:#000000:#ff5555:#50fa7b:#f1fa8c:#8be9fd:#bd93f9:#ff79c6:#ffffff"
-  [[Solarized Darcula]]
-    background_color = "#3d3f41"
-    cursor_color = "#708284"
-    foreground_color = "#d2d8d9"
-    palette = "#25292a:#f24840:#629655:#b68800:#2075c7:#797fd4:#15968d:#d2d8d9:#25292a:#f24840:#629655:#b68800:#2075c7:#797fd4:#15968d:#d2d8d9"
+    scroll_on_output = False
+    scrollback_infinite = True
+    scrollback_lines = 10000
+    scrollbar_position = hidden
+    show_titlebar = False
+    use_system_font = False
   [[Solarized Dark - Patched]]
     background_color = "#001e27"
+    background_image = None
     cursor_color = "#708284"
+    font = Droid Sans Mono Slashed for Powerline 10
     foreground_color = "#708284"
     palette = "#002831:#d11c24:#738a05:#a57706:#2176c7:#c61c6f:#259286:#eae3cb:#475b62:#bd3613:#475b62:#536870:#708284:#5956ba:#819090:#fcf4dc"
-    scrollback_lines = 1000
-    scrollbar_position = hidden
     show_titlebar = False
-  [[Solarized Dark Higher Contrast]]
-    background_color = "#001e27"
-    cursor_color = "#f34b00"
-    foreground_color = "#9cc2c3"
-    palette = "#002831:#d11c24:#6cbe6c:#a57706:#2176c7:#c61c6f:#259286:#eae3cb:#006488:#f5163b:#51ef84:#b27e28:#178ec8:#e24d8e:#00b39e:#fcf4dc"
-    scrollbar_position = hidden
-    show_titlebar = False
-  [[Solarized Light]]
-    background_color = "#fcf4dc"
-    cursor_color = "#536870"
-    foreground_color = "#536870"
-    palette = "#002831:#d11c24:#738a05:#a57706:#2176c7:#c61c6f:#259286:#eae3cb:#001e27:#bd3613:#475b62:#536870:#708284:#5956ba:#819090:#fcf4dc"
+    use_system_font = False
   [[SpaceGray Eighties]]
     background_color = "#222222"
+    background_image = None
     cursor_color = "#bbbbbb"
     foreground_color = "#bdbaae"
     palette = "#15171c:#ec5f67:#81a764:#fec254:#5486c0:#bf83c1:#57c2c1:#efece7:#555555:#ff6973:#93d493:#ffd256:#4d84d1:#ff55ff:#83e9e4:#ffffff"
-    scrollback_lines = 1000
     scrollbar_position = hidden
     show_titlebar = False
-  [[WarmNeon]]
-    background_color = "#404040"
-    cursor_color = "#30ff24"
-    foreground_color = "#afdab6"
-    palette = "#000000:#e24346:#39b13a:#dae145:#4261c5:#f920fb:#2abbd4:#d0b8a3:#fefcfc:#e97071:#9cc090:#ddda7a:#7b91d6:#f674ba:#5ed1e5:#d8c8bb"

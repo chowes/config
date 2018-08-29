@@ -19,6 +19,7 @@ set shiftwidth=4
 set autoindent
 
 "COLOURS
+set t_Co=256
 colorscheme dracula
 set hlsearch
 set ignorecase
@@ -26,6 +27,7 @@ set smartcase
 set incsearch
 
 "LAYOUT
+set linebreak " wrap lines on word endings
 set list " display tabs and line endings
 set listchars=trail:-,tab:-- " change the way tabs and line ends are displayed
 set number
@@ -46,25 +48,17 @@ if !empty(glob('/usr/bin/zsh'))
     set shell=/usr/bin/zsh
 endif
 
+"CTAGS
+set tags=./tags,tags;$HOME
+
 "LEADER KEY SHORTCUTS
 let mapleader = "\<Space>"
 "leader + w to save a file
 nnoremap <Leader>w :w<CR>
-"various shortcuts to copy/paste from system clipboard
-vmap <Leader>y "+y
-vmap <Leader>d "+d
-nmap <Leader>p "+p
-nmap <Leader>P "+P
-vmap <Leader>p "+p
-vmap <Leader>P "+P
-"leader + m to run make on the terminal
-noremap <Leader>m :!make <enter>
-"leader + c to run make clean on the terminal
-noremap <Leader>c :!make clean <enter>
-"leader + v to open vimrc file in a vsplit
-nnoremap <leader>v :vsplit $MYVIMRC<cr>
 "leader + l to clear highlighting
 nnoremap <leader>l :noh <enter>
+"leader + w to save
+nnoremap <leader>w :w <enter>
 
 "Plugins
 "If vim-plug isn't installed, install it
@@ -76,6 +70,7 @@ else
 	call plug#begin('~/.vim/plugged')
         " colours
         Plug 'dracula/vim', { 'as': 'dracula' }
+        Plug 'dikiaap/minimalist', { 'as': 'minimalist' }
 
 		" airline plugin
 		Plug 'vim-airline/vim-airline'

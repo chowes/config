@@ -32,7 +32,7 @@ bindsym $mod+Return exec i3-sensible-terminal
 bindsym $mod+q kill
 
 # start dmenu (a program launcher)
-bindsym $mod+d exec --no-startup-id i3-dmenu-desktop --dmenu="dmenu -fn 'Source Code Pro:pixelsize=20' -i -nb '#2e0054' -nf '#92f8fc' -sf '#2e0054' -sb '#92f8fc'"
+bindsym $mod+d exec --no-startup-id i3-dmenu-desktop --dmenu="dmenu -fn 'Source Code Pro:pixelsize=20' -i -nb '#000036' -nf '#92f8fc' -sf '#000036' -sb '#92f8fc'"
 
 # change focus
 bindsym $mod+h focus left
@@ -109,7 +109,8 @@ bindsym $mod+Shift+9 move container to workspace 9
 bindsym $mod+Shift+0 move container to workspace 10
 
 # lock the screen
-bindsym $mod+z exec i3lock --color=2e0054
+bindsym $mod+z exec i3lock -u -i ${HOME}/Pictures/lock_screen_scaled
+
 # reload the configuration file
 bindsym $mod+Shift+c reload
 # restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
@@ -153,13 +154,13 @@ bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute 1 toggle # mute s
 # finds out, if available)
 bar {
     colors {
-        background #2e0054
+        background #000036
         statusline #92f8fc
         separator #666666
 
-        focused_workspace  #92f8fc #92f8fc #2e0054
-        active_workspace   #2e0054 #2e0054 #92f8fc
-        inactive_workspace #2e0054 #2e0054 #92f8fc
+        focused_workspace  #92f8fc #92f8fc #000036
+        active_workspace   #000036 #000036 #92f8fc
+        inactive_workspace #000036 #000036 #92f8fc
         urgent_workspace   #ff017e #ff017e #92f8fc
         binding_mode       #ff017e #ff017e #92f8fc
     }
@@ -174,7 +175,7 @@ new_window none
 # Colours
 
 # class                 border  backgr. text    indicator child_border
-client.focused          #2e0054 #2e0054 #92f8fc #2e9ef4   #285577
+client.focused          #000036 #000036 #92f8fc #2e9ef4   #285577
 client.unfocused        #0E001C #0E001C #008E93 #292d2e   #222222
 client.focused_inactive #0E001C #0E001C #8FFF44 #292d2e   #222222
 client.urgent           #2f343a #900000 #ffffff #900000   #900000
@@ -185,13 +186,11 @@ client.background       #ffffff
 # Tabbed Layout
 workspace_layout tabbed
 
-
 # Startup Workspaces
 workspace 10 output HDMI-0
 
 # Startup Programs
-exec --no-startup-id compton --config ${HOME}/.config/compton.conf
+exec --no-startup-id compton --config ${HOME}/.config/compton/compton.conf
 exec --no-startup-id ${HOME}/.local/scripts/layout_multi.sh
 exec --no-startup-id feh --bg-fill ${HOME}/Pictures/wall_right --bg-fill ${HOME}/Pictures/wall_left
-
 
