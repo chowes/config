@@ -187,7 +187,11 @@
 [urgency_critical]
     background = "#2e0054"
     foreground = "#92f8fc"
+<<<<<<< HEAD
     timeout = 0
+=======
+    timeout = 300
+>>>>>>> quasit
 
 
 # Every section that isn't one of the above is interpreted as a rules to
