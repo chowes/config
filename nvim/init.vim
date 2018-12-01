@@ -20,9 +20,9 @@ set title
 
 " tabs
 set expandtab
-set tabstop=4
-set softtabstop=4
-set shiftwidth=4
+set tabstop=2
+set softtabstop=2
+set shiftwidth=2
 set autoindent
 
 " color
@@ -106,7 +106,7 @@ call plug#end()
 
 " NerdTree settings
 nnoremap <Leader>F :NERDTreeToggle <enter>
-let NERDTreeWinSize = 25
+let NERDTreeWinSize = 35
 
 " deoplete settings
 let g:deoplete#enable_at_startup = 1
