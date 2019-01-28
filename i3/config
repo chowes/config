@@ -3,7 +3,7 @@ set $mod Mod4
 
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below.
-font pango:Source Code Pro 12
+font pango:Source Code Pro 14
 
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
@@ -15,7 +15,7 @@ bindsym $mod+Return exec i3-sensible-terminal
 bindsym $mod+q kill
 
 # Open the program menu
-bindsym $mod+d exec --no-startup-id i3-dmenu-desktop --dmenu="dmenu -i -fn 'Source Code Pro:pixelsize=32' -nb '#000036' -nf '#92f8fc' -sf '#2e0054' -sb '#92f8fc'"
+bindsym $mod+d exec --no-startup-id i3-dmenu-desktop --dmenu="dmenu -i -fn 'Source Code Pro:pixelsize=28' -nb '#000036' -nf '#92f8fc' -sf '#2e0054' -sb '#92f8fc'"
 
 # change focus - vim style bindings
 bindsym $mod+h focus left
@@ -151,7 +151,7 @@ bar {
         binding_mode       #ff017e #ff017e #92f8fc
     }
 
-    font pango:DejaVu Sans Mono 12
+    font pango:Source Code Pro 14
     status_command i3status
 }
 
