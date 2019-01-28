@@ -80,7 +80,7 @@ bindsym $mod+Shift+9 move container to workspace 9
 bindsym $mod+Shift+0 move container to workspace 10
 
 # lock the screen
-bindsym $mod+z exec i3lock -u -i ${HOME}/Images/lock_screen
+bindsym $mod+z exec i3lock -u -i ${HOME}/Images/lockscreen
 
 # reload the configuration file
 bindsym $mod+Shift+c reload
@@ -177,4 +177,5 @@ workspace_layout tabbed
 exec --no-startup-id compton --config ${HOME}/.config/compton/compton.conf
 exec --no-startup-id feh --bg-scale ${HOME}/Images/wallpaper
 exec --no-startup-id xset s off -dpms
+exec --no-startup-id xss-lock -- ~/.config/i3/lock.sh
 
