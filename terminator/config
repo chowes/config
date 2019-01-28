@@ -7,6 +7,7 @@
   full_screen = <Shift>F11
   group_all = <Primary>g
   help = <Shift>F1
+  layout_launcher = <Shift><Alt>l
   ungroup_all = <Primary><Shift>g
 [layouts]
   [[default]]

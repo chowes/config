@@ -15,14 +15,17 @@ syntax on
 filetype on
 filetype plugin indent on
 
+" Line wrap
+set textwidth=80
+
 " show title
 set title
 
 " tabs
 set expandtab
-set tabstop=4
-set softtabstop=4
-set shiftwidth=4
+set tabstop=2
+set softtabstop=2
+set shiftwidth=2
 set autoindent
 
 " color
@@ -43,15 +46,13 @@ set autochdir "change the working directory to the directory in which the file b
 set history=1000 "remember 1000 commands/search strings
 set sessionoptions-=options "when a session is saved, do not store vimrc options
 set autoread "reread file if an external program has changed a file
-autocmd Filetype c setlocal textwidth=132  "max 132 characters in a line for c files
 set guicursor=
 
 " tags
 set tags=tags;
 
-
 " SHORTCUTS
-"
+
 let mapleader = "\<Space>"
 " leader + l to clear highlighting
 nnoremap <leader>l :noh <enter>
@@ -85,6 +86,9 @@ call plug#begin('~/.local/share/nvim/plugged')
 	Plug 'vim-pandoc/vim-pandoc'
 	Plug 'vim-pandoc/vim-pandoc-syntax'
 
+  " latex
+  Plug 'lervag/vimtex'
+
 	" git plugins
 	Plug 'airblade/vim-gitgutter'
 	Plug 'tpope/vim-fugitive'
@@ -106,7 +110,7 @@ call plug#end()
 
 " NerdTree settings
 nnoremap <Leader>F :NERDTreeToggle <enter>
-let NERDTreeWinSize = 25
+let NERDTreeWinSize = 35
 
 " deoplete settings
 let g:deoplete#enable_at_startup = 1
