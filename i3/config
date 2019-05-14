@@ -16,6 +16,7 @@ bindsym $mod+q kill
 
 # Open the program menu
 bindsym $mod+d exec --no-startup-id i3-dmenu-desktop --dmenu="dmenu -i -fn 'Source Code Pro:pixelsize=28' -nb '#000036' -nf '#92f8fc' -sf '#2e0054' -sb '#92f8fc'"
+# bindsym $mod+d exec --no-startup-id i3-dmenu-desktop --dmenu="dmenu -i -fn 'Source Code Pro:pixelsize=14' -nb '#000036' -nf '#92f8fc' -sf '#2e0054' -sb '#92f8fc'"
 
 # change focus - vim style bindings
 bindsym $mod+h focus left
@@ -80,7 +81,7 @@ bindsym $mod+Shift+9 move container to workspace 9
 bindsym $mod+Shift+0 move container to workspace 10
 
 # lock the screen
-bindsym $mod+z exec i3lock -u -i ${HOME}/Images/lockscreen
+bindsym $mod+z exec ${HOME}/.config/i3/lock.sh
 
 # reload the configuration file
 bindsym $mod+Shift+c reload
@@ -175,7 +176,6 @@ workspace_layout tabbed
 # Startup Programs
 
 exec --no-startup-id compton --config ${HOME}/.config/compton/compton.conf
-exec --no-startup-id feh --bg-scale ${HOME}/Images/wallpaper
+exec --no-startup-id feh --bg-fill ${HOME}/Images/wallpaper
 exec --no-startup-id xset s off -dpms
-exec --no-startup-id xss-lock -- ~/.config/i3/lock.sh
-
+exec --no-startup-id xss-lock -- ${HOME}/.config/i3/lock.sh
