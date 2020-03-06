@@ -22,9 +22,10 @@ set textwidth=80
 set title
 
 " tabs
-set tabstop=4
-set softtabstop=4
-set shiftwidth=4
+set noexpandtab
+set tabstop=8
+set softtabstop=8
+set shiftwidth=8
 set autoindent
 
 " color
@@ -43,6 +44,7 @@ set autochdir "change the working directory to the directory in which the file b
 set history=1000 "remember 1000 commands/search strings
 set sessionoptions-=options "when a session is saved, do not store vimrc options
 set autoread "reread file if an external program has changed a file
+set colorcolumn=80
 set guicursor=
 
 " tags
@@ -83,8 +85,8 @@ call plug#begin('~/.local/share/nvim/plugged')
 	Plug 'vim-pandoc/vim-pandoc'
 	Plug 'vim-pandoc/vim-pandoc-syntax'
 
-	" latex
-	Plug 'lervag/vimtex'
+  " latex
+  Plug 'lervag/vimtex'
 
 	" git plugins
 	Plug 'airblade/vim-gitgutter'
@@ -93,10 +95,6 @@ call plug#begin('~/.local/share/nvim/plugged')
 
 	" easy motion
 	Plug 'easymotion/vim-easymotion'
-
-	" auto close
-	Plug 'Townk/vim-autoclose'
-	inoremap {<CR> {<CR>}<Esc>O
 
 	" deoplete
 	Plug 'roxma/nvim-yarp'

@@ -11,20 +11,29 @@
   ungroup_all = <Primary><Shift>g
 [layouts]
   [[default]]
-    [[[child1]]]
-      command = /usr/bin/zsh
-      parent = window0
-      profile = Dracula
-      type = Terminal
-    [[[window0]]]
+    [[[child0]]]
+      fullscreen = False
+      last_active_term = f6a94498-a318-43f5-8b9a-d826a864db46
+      last_active_window = True
+      maximised = False
+      order = 0
       parent = ""
+      position = 14:14
+      size = 1251, 1354
+      title = tmux /home/colin/school/multicore/hello_world
       type = Window
+    [[[terminal1]]]
+      order = 0
+      parent = child0
+      profile = Solarized Dark - Patched
+      type = Terminal
+      uuid = f6a94498-a318-43f5-8b9a-d826a864db46
 [plugins]
 [profiles]
   [[default]]
     background_color = "#1e1f29"
     cursor_color = "#8be9fd"
-    custom_command = /usr/bin/zsh
+    custom_command = /usr/bin/fish
     font = Source Code Pro 10
     login_shell = True
     palette = "#44475a:#ff5555:#50fa7b:#f1fa8c:#8be9fd:#bd93f9:#ff79c6:#94a3a5:#000000:#ff5555:#50fa7b:#f1fa8c:#8be9fd:#bd93f9:#ff79c6:#ffffff"

@@ -15,8 +15,8 @@ bindsym $mod+Return exec i3-sensible-terminal
 bindsym $mod+q kill
 
 # Open the program menu
-bindsym $mod+d exec --no-startup-id i3-dmenu-desktop --dmenu="dmenu -i -fn 'Source Code Pro:pixelsize=28' -nb '#000036' -nf '#92f8fc' -sf '#2e0054' -sb '#92f8fc'"
-# bindsym $mod+d exec --no-startup-id i3-dmenu-desktop --dmenu="dmenu -i -fn 'Source Code Pro:pixelsize=14' -nb '#000036' -nf '#92f8fc' -sf '#2e0054' -sb '#92f8fc'"
+bindsym $mod+d exec --no-startup-id i3-dmenu-desktop --dmenu="dmenu -i -fn 'Source Code Pro:pixelsize=18' -nb '#000036' -nf '#92f8fc' -sf '#2e0054' -sb '#92f8fc'"
+#bindsym $mod+d exec --no-startup-id i3-dmenu-desktop --dmenu="dmenu -i -fn 'Source Code Pro:pixelsize=14' -nb '#000036' -nf '#92f8fc' -sf '#2e0054' -sb '#92f8fc'"
 
 # change focus - vim style bindings
 bindsym $mod+h focus left
@@ -100,16 +100,16 @@ mode "resize" {
         # Pressing down will grow the window’s height.
 
         # vim style commands
-        bindsym h resize shrink width 10 px or 10 ppt
-        bindsym j resize grow height 10 px or 10 ppt
-        bindsym k resize shrink height 10 px or 10 ppt
-        bindsym l resize grow width 10 px or 10 ppt
+        bindsym h resize shrink width 1 px or 1 ppt
+        bindsym j resize grow height 1 px or 1 ppt
+        bindsym k resize shrink height 1 px or 1 ppt
+        bindsym l resize grow width 1 px or 1 ppt
 
         # same bindings, but for the arrow keys
-        bindsym Left resize shrink width 10 px or 10 ppt
-        bindsym Down resize grow height 10 px or 10 ppt
-        bindsym Up resize shrink height 10 px or 10 ppt
-        bindsym Right resize grow width 10 px or 10 ppt
+        bindsym Left resize shrink width 1 px or 1 ppt
+        bindsym Down resize grow height 1 px or 1 ppt
+        bindsym Up resize shrink height 1 px or 1 ppt
+        bindsym Right resize grow width 1 px or 1 ppt
 
         # back to normal: Enter or Escape
         bindsym Return mode "default"
@@ -129,7 +129,7 @@ bindsym XF86MonBrightnessUp exec xbacklight -inc 5 # increase screen brightness
 bindsym XF86MonBrightnessDown exec xbacklight -dec 5 # decrease screen brightness
 
 # Touchpad controls
-bindsym XF86TouchpadToggle exec /some/path/toggletouchpad.sh # toggle touchpad
+# bindsym XF86TouchpadToggle exec ~/.i3/toggletouchpad.sh # toggle touchpad
 
 # Media player controls
 bindsym XF86AudioPlay exec playerctl play
@@ -157,6 +157,13 @@ bar {
 }
 
 # Disable Title-Bars
+for_window [class=".*"] border pixel 2
+
+# Gaps
+gaps inner 8
+gaps outer 0
+smart_gaps on
+smart_borders on
 new_window none
 
 # Colours
@@ -171,11 +178,15 @@ client.placeholder      #000000 #0c0c0c #ffffff #000000   #0c0c0c
 client.background       #ffffff
 
 # Layout Stacking
-workspace_layout tabbed
+workspace_layout default
+
+# Layout for specific programs
+for_window [class="Gnome-calculator"] floating enable,
 
 # Startup Programs
 
 exec --no-startup-id compton --config ${HOME}/.config/compton/compton.conf
 exec --no-startup-id feh --bg-fill ${HOME}/Images/wallpaper
-exec --no-startup-id xset s off -dpms
 exec --no-startup-id xss-lock -- ${HOME}/.config/i3/lock.sh
+exec --no-startup-id redshift -c ${HOME}/.config/redshift/redshift.conf
+exec --no-startup-id setxkbmap -option caps:escape
