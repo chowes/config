@@ -1,0 +1,4 @@
+#!/bin/sh
+
+xrdb ${HOME}/.config/xorg/Xresources.laptop
+exec i3 -c ${HOME}/.config/i3/config.laptop

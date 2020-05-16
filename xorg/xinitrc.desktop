@@ -1,0 +1,5 @@
+#!/bin/sh
+
+xrdb ${HOME}/.config/xorg/Xresources.desktop
+exec i3 -c ${HOME}/.config/i3/config.desktop
+

@@ -15,7 +15,6 @@ bindsym $mod+Return exec i3-sensible-terminal
 bindsym $mod+q kill
 
 # Open the program menu
-#bindsym $mod+d exec --no-startup-id i3-dmenu-desktop --dmenu="dmenu -i -fn 'Source Code Pro:pixelsize=18' -nb '#000036' -nf '#92f8fc' -sf '#2e0054' -sb '#92f8fc'"
 bindsym $mod+d exec --no-startup-id i3-dmenu-desktop --dmenu="dmenu -i -fn 'Source Code Pro:pixelsize=14' -nb '#000036' -nf '#92f8fc' -sf '#2e0054' -sb '#92f8fc'"
 
 # change focus - vim style bindings
@@ -152,7 +151,7 @@ bar {
         binding_mode       #ff017e #ff017e #92f8fc
     }
 
-    font pango:Source Code Pro 14
+    font pango:Source Code Pro 10
     status_command i3status
 }
 
@@ -181,11 +180,12 @@ client.background       #ffffff
 workspace_layout default
 
 # Layout for specific programs
-for_window [class="Gnome-calculator"] floating enable,
+for_window [class="Gnome-calculator"] floating enable
+for_window [class="Godot_Engine"] floating enable
 
 # Startup Programs
 
-exec --no-startup-id bash ${HOME}/bin/laptop_layout.sh
+exec --no-startup-id bash ${HOME}/bin/desktop_layout.sh
 exec --no-startup-id compton --config ${HOME}/.config/compton/compton.conf
 exec --no-startup-id feh --bg-fill ${HOME}/Images/wallpaper
 exec --no-startup-id xss-lock -- ${HOME}/.config/i3/lock.sh
