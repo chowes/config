@@ -79,10 +79,6 @@ call plug#begin('~/.local/share/nvim/plugged')
 	" file explorer
 	Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
 
-	" markdown
-	Plug 'vim-pandoc/vim-pandoc'
-	Plug 'vim-pandoc/vim-pandoc-syntax'
-
 	" latex
 	Plug 'lervag/vimtex'
 
@@ -93,10 +89,6 @@ call plug#begin('~/.local/share/nvim/plugged')
 
 	" easy motion
 	Plug 'easymotion/vim-easymotion'
-
-	" auto close
-	Plug 'Townk/vim-autoclose'
-	inoremap {<CR> {<CR>}<Esc>O
 
 	" deoplete
 	Plug 'roxma/nvim-yarp'
@@ -115,8 +107,6 @@ let NERDTreeWinSize = 35
 
 " deoplete settings
 let g:deoplete#enable_at_startup = 1
-let g:deoplete#enable_smart_case = 1
-let g:deoplete#disable_auto_complete = 1
 inoremap <expr> <leader><Tab> deoplete#mappings#manual_complete()
 inoremap <expr> <Tab>  pumvisible() ? "\<C-n>" : "\<Tab>"
 inoremap <expr> <S-Tab>  pumvisible() ? "\<C-p>" : "\<S-Tab>"

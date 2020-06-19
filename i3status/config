@@ -17,7 +17,6 @@ general {
 order += "volume speakers"
 order += "ethernet _first_"
 order += "wireless _first_"
-order += "battery 0"
 order += "disk /"
 order += "load"
 order += "tztime local"
@@ -29,7 +28,7 @@ volume speakers {
 
 wireless _first_ {
         format_up = "%quality at %essid: %ip"
-        format_down = "--"
+        format_down = ""
 }
 
 ethernet _first_ {
